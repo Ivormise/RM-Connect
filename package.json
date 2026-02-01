@@ -1,0 +1,63 @@
+{
+  "name": "radiomaster-configurator",
+  "version": "1.0.0",
+  "description": "Автономный конфигуратор устройств RadioMaster с поддержкой Web Serial API",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --x64",
+    "build:dir": "electron-builder build --win --x64 --dir"
+  },
+  "keywords": [
+    "RadioMaster",
+    "Electron",
+    "Web Serial",
+    "Configurator"
+  ],
+  "author": "RadioMaster Team",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.radiomaster.configurator",
+    "productName": "RadioMaster Configurator",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "**/*",
+      "!**/*.md",
+      "!.git",
+      "!.gitignore"
+    ],
+    "extraResources": [
+      {
+        "from": "fonts",
+        "to": "fonts",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    }
+  }
+}
