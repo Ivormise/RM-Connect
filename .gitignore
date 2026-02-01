@@ -27,3 +27,5 @@ Thumbs.db
 # Системные файлы
 .env
 .env.local
+
+/android/
