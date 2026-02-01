@@ -43,6 +43,7 @@ jobs:
           npm run build
         env:
           DEBUG: electron-builder
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Show build results
         if: always()
