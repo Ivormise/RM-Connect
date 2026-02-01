@@ -18,11 +18,39 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Check environment
+        run: |
+          echo "=== Environment Info ==="
+          node --version
+          npm --version
+          echo "=== Current Directory ==="
+          pwd
+          echo "=== Directory Contents ==="
+          ls -la
+          echo "=== Package.json ==="
+          cat package.json
+      
       - name: Install dependencies
-        run: npm install
+        run: |
+          echo "=== Installing dependencies ==="
+          npm install --verbose
+          echo "=== Installation complete ==="
+          ls -la node_modules
       
       - name: Build Electron app
-        run: npm run build
+        run: |
+          echo "=== Starting build ==="
+          npm run build -- --verbose
+        env:
+          DEBUG: electron-builder
+      
+      - name: Show build results
+        if: always()
+        run: |
+          echo "=== Build directory contents ==="
+          if (Test-Path dist) { ls -la dist } else { echo "dist directory not found" }
+          echo "=== All files in workspace ==="
+          ls -R
       
       - name: Upload Release Asset
         if: github.event_name == 'release'
