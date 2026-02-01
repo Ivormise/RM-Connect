@@ -21,7 +21,6 @@ function createWindow() {
       // Preload скрипт (опционально)
       preload: path.join(__dirname, 'preload.js')
     },
-    icon: path.join(__dirname, 'build/icon.ico'),
     backgroundColor: '#e0e7ff',
     show: false // Не показывать окно до полной загрузки
   });
