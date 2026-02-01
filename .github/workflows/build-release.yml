@@ -40,7 +40,7 @@ jobs:
       - name: Build Electron app
         run: |
           echo "=== Starting build ==="
-          npm run build -- --verbose
+          npm run build
         env:
           DEBUG: electron-builder
       
