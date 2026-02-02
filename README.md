@@ -1,5 +1,7 @@
 # RadioMaster Configurator
 
+**Внимание:** Это приложение предназначено для работы с устройствами RadioMaster T8L
+
 Автономное десктопное приложение для конфигурации устройств RadioMaster с поддержкой Web Serial API. Нативно для Radiomaster T8L.
 
 ## Описание
@@ -41,7 +43,7 @@ RadioMaster Configurator - это портативное Electron-приложе
 1. **Клонируйте репозиторий:**
 
 ```bash
-git clone https://github.com/ваш-username/RM-Connect.git
+git clone https://github.com/Ivormise/RM-Connect.git
 cd RM-Connect
 ```
 
@@ -185,4 +187,4 @@ MIT
 
 ---
 
-**Внимание:** Это приложение предназначено для работы с устройствами RadioMaster. Использование с другими устройствами может привести к непредсказуемым результатам.
+
